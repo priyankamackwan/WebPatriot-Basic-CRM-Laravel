@@ -1,22 +1,37 @@
-<h5 data-v-e53281f6="">Deployment</h5>
-<ol data-v-e53281f6="">
-	<li data-v-e53281f6="">Extract the archive and put it in the folder you want</li><li data-v-e53281f6=""> Run 
-		<code data-v-e53281f6="">cp .env.example .env</code> 
-		file to copy example file to
-		<code data-v-e53281f6="">.env</code>
-		<br data-v-e53281f6="">Then edit your 
-		<code data-v-e53281f6="">.env</code> 
-	file with DB credentials and other settings. </li>
-	<li data-v-e53281f6="">Run 
-		<code data-v-e53281f6="">composer install</code> command</li> 
-	<li data-v-e53281f6=""> Run 
-		<code data-v-e53281f6="">php artisan migrate --seed</code> command. 
-		<br data-v-e53281f6="">
-Notice: seed is important, because it will create the first admin
-user for you. </li> 
-	<li data-v-e53281f6="">Run 
-		<code data-v-e53281f6="">php artisan key:generate</code> command.</li> 
-	<li data-v-e53281f6=""> If you have file/photo fields, run
-		<code data-v-e53281f6="">php artisan storage:link</code> command.
-	</li>
-</ol>
+# Basic CRM With Laravel
+
+## Follow below instructions to setup project
+
+Clone the repository
+
+    https://github.com/priyankamackwan/WebPatriot-Basic-CRM-Laravel.git
+
+Switch to the repo folder
+
+    cd WebPatriot-Basic-CRM-Laravel
+
+Create Folders if doesn't exist
+
+	boostrap/cache, storage/framework/cache,storage/framework/views, storage/framework/sessions, storage/logs
+
+Create a .env file
+
+	cp .env.example .env
+
+Generate a new application key
+
+	php artisan key:generate
+
+Install all the dependencies using composer
+
+    composer install
+
+Run the database migrations (Set the database connection in .env before migrating)
+
+	php artisan migrate --seed
+
+Start the local development server
+
+    php artisan serve
+
+You can now access the server at http://localhost:3000
